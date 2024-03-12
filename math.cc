@@ -159,7 +159,7 @@ void easy(){ // dificultade facil no jogo das tabuadas
         }
     }
 
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 11; i++){
         cout << num1 << " * " << i << " = ";
         cin >> result;
 
@@ -188,7 +188,7 @@ void medium(){ // dificultade facil no jogo das tabuadas
         }
     }
 
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 11; i++){
         cout << num1 << " * " << i << " = ";
         cin >> result;
 
@@ -210,7 +210,7 @@ void hard(){ // dificultade facil no jogo das tabuadas
     srand(time(NULL));
     num1 = rand() % 10;
 
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 11; i++){
         cout << num1 << " * " << i << " = ";
         cin >> result;
 
