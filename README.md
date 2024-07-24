@@ -1,2 +1,2 @@
 # college
-my work in college
+my work in the college
