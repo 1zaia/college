@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    function escolha(){
+        let opcao = prompt("Opcao (1/2/3/4/5/6/7/8/9//10/11/12): ");
+        while(!false){
+            switch(opcao){
+                case '1': // soma de 2 numeros
+
+                    let num1 = Number(prompt("Numero 1: "));
+                    let num2 = Number(prompt("Numero 2: "));
+                    let resultado = somaNumeros(num1, num2);
+
+                    alert(resultado);
+                    return true;
+                    break;
+
+                case '2': // area quadrado
+
+                    let ladoQuadrado = Number(prompt("Lado do Quadrado: "));
+
+                    let AreaQuadrado = areaQuad(ladoQuadrado);
+                    alert("Um quadrado de lado " + ladoQuadrado + " tem area " + AreaQuadrado);
+
+                    return true;
+                    break;
+
+                case '3': // area retangulo
+
+                    let lado1 = Number(prompt("Lado 1 do Retangulo: "));
+                    let lado2 = Number(prompt("Lado 2 do Retangulo: "));
+
+                    let areaRetangulo = areaRetangulo(lado1, lado2);
+
+                    alert("Um retangulo de lados " + lado1 + "e lado "+ lado2 + " tem area " + areaRetangulo);
+
+                    return true;
+                    break;
+
+                case '4': // salario antigo = salario antigo + procentagem nova
+
+                    let salario = number(prompt("Digite o salário anual do colaborador: "));
+                    let aumento = number(prompt("Digite o aumento em porcentagem : "));
+
+                    let SalarioNovo = salarioNovo(salario, aumento);
+
+                    alert("O salario novo é : " + SalarioNovo);
+
+                    return true;
+                    break;
+
+                case '5': // fahrenheit -> celcius
+
+                    let Fahrenheit = Number(prompt("Digite os graus em Fahrenheit : "));
+                    let celcius = Centigrados(Fahrenheits);
+
+                    alert(Fahrenheit + " F em centigrados é " + celcius + " C" );
+
+                    return true;
+                    break;
+
+                case '6': // celcius -> fahrenheit
+                    
+                    let Celcius = Number(prompt("Digite os graus em Celcius: "));
+                    let fahrenheit = Fahrenheit(celcius);
+                    
+                    alert(Celcius + " C em fahrenheit é " + fahrenheit + " F");
+                    
+                    return true;
+                    break;
+
+                case '7': //aumentar um 20% o valor de um produto
+
+                    let valorProduto = Number(prompt("Valor do produto: "));
+                    let valorNovo = AcrecimoValor(valorProduto);
+
+                    alert("Um produto de valor "+ valorProduto + " com um acrecimo de 20% é " + valorNovo);
+
+                    return true;
+                    break;
+
+                case '8': // converter de horas pra minutos
+
+                    let horas = Number(prompt("Digite quanto tempo demorou a tarefa: "));
+                    let minutos = Minutos(horas);
+
+                    alert(horas + " horas em minutos é " + minutos);
+
+                    return true;
+                    break;
+
+                case '9': // mostrar o numero posterior e o anterior de um dito pelo usuario
+                    
+                    let numero = Number(prompt("Digite um numero: "));
+                    let anterior = AntNum(numero);
+                    let posterior = PostNum(numero);
+
+                    alert("O numero Anterior ao " + numero + " é " + anterior + " e o posterior é " + posterior);
+
+                    return true;
+                    break;
+
+                case '10': // valor da parcela de um produto
+
+                    let valorProduto = Number(prompt("Digite o valor do produto : "));
+                    let quantidadeParcelas = Number(prompt("Digite a quantidade de parcelas : "));
+
+                    let valorParcela = parcela(valorProduto, quantidadeParcelas);
+            
+                    alert("O produto vale " + valorProduto + " dividido em " + quantidadeParcelas + " sai cada parcela por " + valorParcela);
+
+                    return true;
+                    break;
+
+                case '11': //valor com desconto de 10%
+
+                    let valorProduto = Number(promp("Valor do produto : "));
+                    let desconto = novoValor(valorProduto);
+
+                    alert("Um produto com valor " + valorProduto + " com um desconto de 10% fica por " + desconto);
+
+                    return true;
+                    break;
+
+                case '12': //media aritmetica de 3 notas
+
+                    let nota1 = Number(prompt("Nota 1: "));
+                    let nota2 = Number(prompt("Nota 2: "));
+                    let nota3 = Number(prompt("Nota 3: "));
+
+                    let media = Media(nota1, nota2, nota3);
+
+                    alert("Com as notas " + nota1 + " " + nota2 + " " + nota3 + " fica com uma média de " + média);
+
+                    return true;
+                    break;
+
+                default:
+                    console.log("NAO EXISTE ESTA OPCAO");
+                    retuen false;
+                    break;
+            }
+        }
+    }
+
+    function somaNumeros(a, b){
+        return a+b;
+    }
+    function areaQuad(a){
+        return a**2;
+    }
+    function areaRetangulo(a, b){
+        return a*b;
+    }
+    function salarioNovo(a,b){
+        return a + a*(b/100);
+    }
+    function Centigrados(a){
+        return (a-32)/1,8;
+    }
+    function Fahrenheit(a){
+        return 1,8*(a + 32);
+    }
+    function AcrecimoValor(a){
+        return a*0,2+a;
+    }
+    function Minutos(a){
+        return a*60;
+    }
+    function AntNum(a){
+        return a--;
+    }
+    function PostNum(a){
+        return a++;
+    }
+    function parcela(a,b){
+        return a/b;
+    }
+    function novoValor(a){
+        return a - (a*0,1);
+    }
+    function Media(a, b, c){
+        return (a+b+c)/3;
+    }
+
+    escolha();
+</body>
+</html>
