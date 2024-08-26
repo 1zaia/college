@@ -1,0 +1,7 @@
+COMPILAR :
+
+	gcc -o output_file source_file.c
+
+EXECUTAR : 
+	ESCREVER NO PROMPT:
+	output_file.exe
