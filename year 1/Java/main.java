@@ -5,8 +5,13 @@ public class main{
 
         Scanner scan = new Scanner(System.in);
         int a = scan.nextInt();
-        System.out.println(a);
         
+        if(a % 2 == 0){
+            System.out.println("Numero é par");
+        }else{
+            System.out.println("Numero é impar");
+        }
+
     }
 
 }
