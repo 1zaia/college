@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2</title>
+</head>
+<body>
+    <script>
+        function limitarExecucoes(func, limite) {
+  let contador = 0; 
+
+  return function(...args) {
+    if (contador < limite) {
+      contador++;
+      return func(...args); 
+    } else {
+      console.log("Limite de execuções atingido.");
+      return null;
+    }
+  };
+}
+
+
+function minhaFuncao(x) {
+  console.log(`Executando função com ${x}`);
+}
+
+const minhaFuncaoLimitada = limitarExecucoes(minhaFuncao, 5);
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex6</title>
+</head>
+<body>
+    <script>
+        function multiply(num1, num2, callback){
+            let resultado = num1 * num2;
+            callback (resultado);
+        }
+
+        multiply(3, 4, function(res) {
+            alert(res);
+        });
+    </script>
+</body>
+</html>
