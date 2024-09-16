@@ -16,7 +16,7 @@ public class Main{
         fibonacci[0] = 0;
         fibonacci[1] = 1;
 
-        switch (posicao) {
+        switch(posicao) {
             case 0:
                 System.out.println("-- Sequencia de Fibonacci -- ");
                 break;
