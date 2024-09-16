@@ -23,9 +23,7 @@ public class pedindoNum {
     }
 
     boolean Testar(){
-        if(num1 > 0 && num2*num2 + 4*num1*num3 >= 0){
-            return true;
-        }else return false;
+        return num1 > 0 && num2*num2 + 4*num1*num3 >= 0;
     }
 
     public void Equacao(){
