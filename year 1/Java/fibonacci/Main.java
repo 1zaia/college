@@ -4,11 +4,12 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args){
 
+        int posicao = 0;
         int MaxArray = 10000000;
                 
         System.out.println("Escreva uma posicao de fibonacci: ");
         Scanner scan = new Scanner(System.in);
-        int posicao = scan.nextInt();
+        posicao = scan.nextInt();
         
         int[] fibonacci = new int[MaxArray];
 
