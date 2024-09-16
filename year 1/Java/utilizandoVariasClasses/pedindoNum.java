@@ -1,6 +1,5 @@
 package utilizandoVariasClasses;
 import java.util.Scanner;
-import java.lang.Math;
 
 //caso nao diga que é publico, assume-se que é privado
 
@@ -10,23 +9,22 @@ public class pedindoNum {
     
     void Numero(){
 
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Digite uma raiz da equação:");
+            num1 = scanner.nextInt();
+   
+            System.out.print("Digite uma raiz da equação:");
+            num2 = scanner.nextInt();
 
-        System.out.print("Digite uma raiz da equação:");
-        num1 = scanner.nextInt();
-    
-        System.out.print("Digite uma raiz da equação:");
-        num2 = scanner.nextInt();
-
-        System.out.print("Digite uma raiz da equação:");
-        num3 = scanner.nextInt();
+            System.out.print("Digite uma raiz da equação:");
+            num3 = scanner.nextInt();
+        }
 
     }
 
     boolean Testar(){
-        if(num1 > 0){
-            if(num2*num2 + 4*num1*num3 >= 0)return true;
-                else return false;
+        if(num1 > 0 && num2*num2 + 4*num1*num3 >= 0){
+            return true;
         }else return false;
     }
 
