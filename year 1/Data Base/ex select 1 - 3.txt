@@ -1,0 +1,113 @@
+ex 1 e 2
+
+
+-- create table -- 
+
+CREATE TABLE customers (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  street TEXT NOT NULL,
+  city TEXT NOT NULL,
+  estado TEXT NOT NULL,
+  credit_limit INTEGER NOT NULL
+);
+
+-- insert into --
+
+INSERT INTO customers VALUES (1, 'Pedro Augusto da Rocha', 'Rua Pedro Carlos Hoffman', 'Porto Alegre', 'RS', '700,00');
+INSERT INTO customers VALUES (2, 'Antonio Carlos Mamel', 'Av. Pinheiros', 'Belo Horizonte', 'MG', '3500,50');
+INSERT INTO customers VALUES (3, 'Luiza Augusta Mhor', 'Rua Salto Grande', 'Niteroi', 'RJ', '4000,00');
+INSERT INTO customers VALUES (4, 'Jane Ester', 'Av. 7 de setembro', 'Erechim', 'RS', '800,00');
+INSERT INTO customers VALUES (5, 'Marcos Antonio dos Santos', 'Av. Farropos', 'Porto Alegre', 'RS', '4250,50');
+
+-- selects --
+
+SELECT * FROM customers WHERE estado = 'RS';
+
+SELECT * FROM customers WHERE city = 'Porto Alegre';
+
+ex 3
+
+-- create table -- 
+
+CREATE TABLE products (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  amount INTEGER NOT NULL,
+  price INTEGER NOT NULL
+);
+
+-- insert into --
+
+INSERT INTO products VALUES (1, 'Two-door wardrobe', '100', '80');
+INSERT INTO products VALUES (2, 'Dining table', '1000', '560');
+INSERT INTO products VALUES (3, 'Towel holder', '10000', '5.50');
+INSERT INTO products VALUES (4, 'Computer desk', '350', '100');
+INSERT INTO products VALUES (5, 'Chair', '3000', '210.64');
+INSERT INTO products VALUES (6, 'Single bed', '750', '99');
+
+-- selects -- 
+
+SELECT name
+FROM products 
+WHERE price < 10 AND price > 100
+
+ex 4
+
+-- create table --
+
+CREATE TABLE categories (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL
+);
+
+CREATE TABLE providers (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  street TEXT NOT NULL,
+  city TEXT NOT NULL,
+  estado TEXT NOT NULL
+);
+
+CREATE TABLE products (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  amount INTEGER NOT NULL,
+  price INTEGER NOT NULL,
+  id_providers INTEGER NOT NULL,
+  id_categories INTEGER NOT NULL
+);
+
+-- insert into --
+
+INSERT INTO providers VALUES (1, 'Henrique', 'Av. Brasil', 'Rio de Janeiro', 'RJ');
+INSERT INTO providers VALUES (2, 'Marcelo Augusto', 'Rua Imigrantes', 'Belo Horizonte', 'MG');
+INSERT INTO providers VALUES (3, 'Cariline Silva', 'Av. São Paulo', 'Salvador', 'BA');
+INSERT INTO providers VALUES (4, 'Guilherme Staff', 'Rua Central', 'Porto Alegre', 'RS');
+INSERT INTO providers VALUES (5, 'Isabela Moraes', 'Av. Juiz Grande', 'Curitiba', 'PR');
+INSERT INTO providers VALUES (6, 'Fracisco  Accerr', 'Av. Paulista', 'São Paulo', 'SP');
+
+INSERT INTO categories VALUES (1, 'old stock');
+INSERT INTO categories VALUES (2, 'new stock');
+INSERT INTO categories VALUES (3, 'modern');
+INSERT INTO categories VALUES (4, 'commercial');
+INSERT INTO categories VALUES (5, 'recyclable');
+INSERT INTO categories VALUES (6, 'executive');
+INSERT INTO categories VALUES (7, 'superior');
+INSERT INTO categories VALUES (8, 'wood');
+INSERT INTO categories VALUES (9, 'super luxury');
+INSERT INTO categories VALUES (10, 'vintage');
+
+INSERT INTO products VALUES (1, 'Two-door wardrobe', '100', '800', '6', '8');
+INSERT INTO products VALUES (2, 'Dining table', '1000', '560', '1', '9');
+INSERT INTO products VALUES (3, 'Towel holder', '10000', '25.50', '5', '1');
+INSERT INTO products VALUES (4, 'Computer desk', '350', '320.50', '4', '6');
+INSERT INTO products VALUES (5, 'Chair', '3000', '210.64', '3', '6');
+INSERT INTO products VALUES (6, 'Single bed', '750', '460', '1', '2');
+
+-- selects --
+
+SELECT p.name, prov.name
+FROM products p, categories c, providers prov
+WHERE (p.id_categories = c.id AND c.id = 6) 
+  AND (prov.id = p.id_providers AND prov.name = 6);
